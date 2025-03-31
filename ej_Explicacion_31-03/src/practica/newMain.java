@@ -1,6 +1,6 @@
 
 
-package frases.txt;
+package practica;
 
 import java.io.File;
 import java.io.FileInputStream;
