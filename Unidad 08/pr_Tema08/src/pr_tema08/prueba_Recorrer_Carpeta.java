@@ -13,7 +13,7 @@ public class prueba_Recorrer_Carpeta {
         File desktop = new File("C:\\Users\\alumnociclo\\Desktop");
         
         File [] archivosDirectorios = desktop.listFiles();
-        
+        System.out.println("");
         
         String tipo ="";
         
