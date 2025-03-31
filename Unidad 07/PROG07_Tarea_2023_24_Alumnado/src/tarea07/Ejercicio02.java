@@ -98,7 +98,8 @@ public class Ejercicio02 {
             System.out.print( "["+ lista_Plantas_2.get(j)+ "]");
         }
         
-
+        
+        System.out.println("");
         //----------------------------------------------
         //            Salida de resultados
         //----------------------------------------------
