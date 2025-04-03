@@ -34,12 +34,7 @@ public class Ej_B2_NotasAlumnos {
             
             
         }
-        
-        System.out.println("");
-        
-        
-        
-        
+       
     }
 
 }
