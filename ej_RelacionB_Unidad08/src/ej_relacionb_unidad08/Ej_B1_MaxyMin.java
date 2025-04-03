@@ -24,22 +24,22 @@ public class Ej_B1_MaxyMin {
             
             if (primerNumero == true) {
                 
-                
-                minimo = number;
                 maximo = number;
+                minimo = maximo;
+                
                 
                 primerNumero = false;
                 
             }
             else{
                 
-                if (number > maximo) {
+                if (maximo < number) {
                     
                     maximo = number;
                     
                 }
                 
-                if (number < minimo) {
+                if (minimo > number) {
                     
                     minimo = number;
                     

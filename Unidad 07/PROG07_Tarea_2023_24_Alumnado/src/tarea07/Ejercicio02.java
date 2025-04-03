@@ -42,6 +42,12 @@ public class Ejercicio02 {
         System.out.println("-----------------------------------------");
         
         
+        
+        
+        //----------------------------------------------
+        //               Procesamiento
+        //----------------------------------------------
+
         // No hay, pues se usa un número fijo de elementos aleatorios
         
         CANTIDAD_ESPECIES_PLANTAS = 10;
@@ -80,12 +86,14 @@ public class Ejercicio02 {
             contador_Plantas_Add++;
             
         }
+
+    
+        //----------------------------------------------
+        //            Salida de resultados
+        //----------------------------------------------
         
-        //----------------------------------------------
-        //               Procesamiento
-        //----------------------------------------------
-
-
+        
+        //CREAMOS LAS DOS PRIMERAS LISTAS DE PLANTAS ALEATORIAMENTE :
         
         
         System.out.print("CONTENIDO INICIAL LISTADO 1 : ");
@@ -107,10 +115,12 @@ public class Ejercicio02 {
         
         System.out.println("");
         
-        //----------------------------------------------
-        //            Salida de resultados
-        //----------------------------------------------
         
+        
+        
+        
+        
+        //Genero un set que contenga todas las especies POPULARES :
 
     }
 }
