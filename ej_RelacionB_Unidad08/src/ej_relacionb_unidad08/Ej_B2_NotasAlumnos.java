@@ -21,6 +21,8 @@ public class Ej_B2_NotasAlumnos {
         
         Scanner sc = new Scanner(new File("C:\\Users\\alumnociclo\\Desktop\\Documentos\\Documentos\\alumnos_notas.txt"));
         
+        
+        //CON EL SCANNER ES IGUAL PERO CAMBIANDO ESTA PARTE :
         /*while ((sc.hasNext()) {     
             
             
