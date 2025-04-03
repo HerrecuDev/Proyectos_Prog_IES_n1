@@ -56,23 +56,30 @@ public class Ejercicio02 {
             //Lo añado al List
             lista_Plantas_1.add(planta_Aleatoria_1);
             
+            //Y sumamos ya una planta añadida en ambos LIST :
             
+            contador_Plantas_Add++;
+        }
+        
+        
+        //Inicializo la variable del contador de plantas :
+        
+        contador_Plantas_Add = 0;
+        
+        //Repito el bucle anterior :
+        
+        while (contador_Plantas_Add < 10) {  
             
             //Genero el aleatorio para el segundo List :
             planta_Aleatorio_2 = Utilidades.especiePlantaAleatoria();
             
             lista_Plantas_2.add(planta_Aleatorio_2);
             
-            //Y sumamos ya una planta añadida en ambos LIST :
+            //Y sumamos ya una planta añadida
             
             contador_Plantas_Add++;
             
-            
-            
-            
-            
         }
-        
         
         //----------------------------------------------
         //               Procesamiento
@@ -98,8 +105,8 @@ public class Ejercicio02 {
             System.out.print( "["+ lista_Plantas_2.get(j)+ "]");
         }
         
-        
         System.out.println("");
+        
         //----------------------------------------------
         //            Salida de resultados
         //----------------------------------------------
