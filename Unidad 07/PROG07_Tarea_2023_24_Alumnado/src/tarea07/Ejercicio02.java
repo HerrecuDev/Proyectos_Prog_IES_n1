@@ -2,6 +2,8 @@ package tarea07;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 /** Ejercicio 2. Búsqueda de especies de plantas populares
  * @author Profesor
@@ -120,7 +122,27 @@ public class Ejercicio02 {
         
         
         
-        //Genero un set que contenga todas las especies POPULARES :
+        //Genero un set que contenga todas las especies POPULARES y otro List para almacenar las especies populares :
+        
+        //Conjunto:
+        Set<String> conjunto_Populares = new TreeSet<>();
+        
+        //Nuevo List plantas populares :
+        List<String> plantas_Populares = new ArrayList<>();
+        
+        //Recorro ambas listas y si tienen en la misma posicion la misma planta la añadimos a plantas Populares :
+        
+        for (int i = 0; i < lista_Plantas_1.size(); i++) {
+           
+            if (lista_Plantas_1.get(i).endsWith(lista_Plantas_2.get(i))) {
+                
+                plantas_Populares.add(lista_Plantas_1.get(i));
+                
+            }
+            
+        }
+        
+        System.out.println("Las plantas populares son : " + plantas_Populares);
 
     }
 }
