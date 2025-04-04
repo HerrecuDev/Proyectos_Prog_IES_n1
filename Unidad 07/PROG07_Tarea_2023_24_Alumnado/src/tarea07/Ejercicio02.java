@@ -120,29 +120,44 @@ public class Ejercicio02 {
         
         
         
+        System.out.println("");
         
+        //List plantas populares :
+        List<String> plantas_Populares = new ArrayList<>();
         
-        //Genero un set que contenga todas las especies POPULARES y otro List para almacenar las especies populares :
-        
-        //Conjunto:
+        //Conjunto Plantas populares:
         Set<String> conjunto_Populares = new TreeSet<>();
         
-        //Nuevo List plantas populares :
-        List<String> plantas_Populares = new ArrayList<>();
+        //List posiciones populares :
+        List<Integer> posiciones_Populares = new ArrayList<>();
         
         //Recorro ambas listas y si tienen en la misma posicion la misma planta la añadimos a plantas Populares :
         
         for (int i = 0; i < lista_Plantas_1.size(); i++) {
            
-            if (lista_Plantas_1.get(i).endsWith(lista_Plantas_2.get(i))) {
+            if (lista_Plantas_1.get(i).equals(lista_Plantas_2.get(i))) {
                 
-                plantas_Populares.add(lista_Plantas_1.get(i));
+                plantas_Populares.add(lista_Plantas_1.get(i)); //añadirlas en el List
+                
+                conjunto_Populares.add(lista_Plantas_1.get(i)); //Para añadir  las plantas populares en la coleccion
+                
+                posiciones_Populares.add(i); //Añadimos la posicion popular al List.
                 
             }
             
         }
         
+        
+        
+        
+        
+        
+        //MOSTRAMOS POR PANTALLA :
+        
         System.out.println("Las plantas populares son : " + plantas_Populares);
+        System.out.println("Contenido final de la lista de posiciones populares :" + posiciones_Populares);
+        System.out.println("Contenido de la coleccion final de plantas populares : " + conjunto_Populares);
+        
 
     }
 }
