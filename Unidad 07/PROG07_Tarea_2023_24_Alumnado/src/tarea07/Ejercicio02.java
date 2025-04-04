@@ -137,11 +137,17 @@ public class Ejercicio02 {
            
             if (lista_Plantas_1.get(i).equals(lista_Plantas_2.get(i))) {
                 
+                
+                
                 plantas_Populares.add(lista_Plantas_1.get(i)); //añadirlas en el List
                 
                 conjunto_Populares.add(lista_Plantas_1.get(i)); //Para añadir  las plantas populares en la coleccion
                 
                 posiciones_Populares.add(i); //Añadimos la posicion popular al List.
+                
+                //Por ultimo modificamos el formato de salida en cada listado final :
+                lista_Plantas_1.set(i, "*" + lista_Plantas_1.get(i) + "*");
+                lista_Plantas_2.set(i, "*" + lista_Plantas_2.get(i) + "*");
                 
             }
             
@@ -152,8 +158,12 @@ public class Ejercicio02 {
         
         
         
-        //MOSTRAMOS POR PANTALLA :
         
+        
+        
+        //MOSTRAMOS POR PANTALLA :
+        System.out.println("Contenido final de la lista 1 :" + lista_Plantas_1);
+        System.out.println("Contenido final de la lista 2 : " + lista_Plantas_2);
         System.out.println("Las plantas populares son : " + plantas_Populares);
         System.out.println("Contenido final de la lista de posiciones populares :" + posiciones_Populares);
         System.out.println("Contenido de la coleccion final de plantas populares : " + conjunto_Populares);
