@@ -70,12 +70,19 @@ public class Ej_B4 {
             }
             
             //Añado todos los nombres en su list de apellidos :
-           
+            
+            while ((s = br.readLine()) != null) {
+                
+                apellidos.add(s);
+                
+            }
             
            
             
+           
             
             
+           
             
         } while (salir != false);
         
