@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<concesionario>
+    <coches>
+        <coche>
+            <matricula>1234ABC</matricula>
+            <marca>Opel</marca>
+            <fecha anio="1970"/>
+            <precio>25000</precio>
+        </coche>
+    </coches>
+</concesionario>
