@@ -64,8 +64,8 @@ public class Ejercicio3 {
 
             // Escribo en el archivo XML a partir de la clase RecetarioXML.
             System.out.println("Escribiendo en el archivo Recetario.xml...");
-            bd = new RecetarioXML(ruta);
-            bd.escribir(miRecetario);
+            //bd = new RecetarioXML(ruta);
+            //bd.escribir(miRecetario);
 
             receta3 = new Receta("Pudin de almendras y arroz", "Postre",  LocalDate.parse("2010-01-23"),
                     List.of("leche de almendras", "arroz blanco", "azúcar","vainilla","extracto de almendras","canela","almendras tostadas"),
@@ -85,7 +85,7 @@ public class Ejercicio3 {
 
             // Leo del archivo XML, almacenando su contenido (las dos recetas creadas originalmente) 
             // en el objeto de tipo Recetario.
-            miRecetario = bd.leer();
+            //miRecetario = bd.leer();
 
             // Muestro por pantalla las dos recetas del recetario (las que se han leído del archivo XML).
             System.out.printf("Leo del archivo %d recetas.\n", miRecetario.numRecetas());
