@@ -99,6 +99,13 @@ public class Recetario {
      * forma textual.
      * @return cadena que representa las características del recetario de forma textual
      */
+    
+    //Genero getter del listado de recetas (Nos lo dice Miguel para que sea mas sencillo realizar la Tarea.
+    
+    public List<Receta> getRecetas() {
+        return recetas;
+    }
+
     @Override
     public String toString() {
         String listado = "";
