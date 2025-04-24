@@ -133,7 +133,7 @@ public class Main_GuardarPartida {
     public static void juegoIniciado() throws FileNotFoundException, IOException, ClassNotFoundException{
         
         
-                    FileInputStream guardar_Partida = new FileInputStream("str.save");
+                    FileInputStream guardar_Partida = new FileInputStream("C:\\Users\\alumnociclo\\Desktop\\Partidas");
                     ObjectInputStream objetosstream = new ObjectInputStream(guardar_Partida);
                     Personaje objeto = (Personaje) objetosstream.readObject();
                     System.out.println(objeto);
