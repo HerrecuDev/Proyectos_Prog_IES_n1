@@ -29,7 +29,6 @@ public class Ejercicio1 {
         System.out.println("Abriendo archivo de recetas...");
 
         
-        
 
         System.out.println("Cerrando archivo de recetas...");
 

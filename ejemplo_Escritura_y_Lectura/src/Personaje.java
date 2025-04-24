@@ -14,12 +14,12 @@ public class Personaje implements Serializable{
     
     private static final long serialVersionUID = 1L;
     
-    private final int id;
+    private final int nivel;
     private final String nombre;
     
-    public Personaje(int id , String nombre){
+    public Personaje(int nivel , String nombre){
         
-        this.id = id;
+        this.nivel = 1;
         this.nombre = nombre;
         
         
@@ -30,14 +30,15 @@ public class Personaje implements Serializable{
         return serialVersionUID;
     }
 
-    public int getId() {
-        return id;
+    public int getNivel() {
+        return nivel;
     }
 
     public String getNombre() {
         return nombre;
     }
-    
+
+   
     
     
     
@@ -48,7 +49,7 @@ public class Personaje implements Serializable{
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Personaje{");
-        sb.append("id=").append(id);
+        sb.append("nivel=").append(nivel);
         sb.append(", nombre=").append(nombre);
         sb.append('}');
         return sb.toString();
