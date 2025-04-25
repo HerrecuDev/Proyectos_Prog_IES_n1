@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -39,22 +40,38 @@ public class Main_GuardarPartida {
                 
                 case "R":
                     
+                        File [] partidas = new File("src\\partidasGuardadas").listFiles();
+
+                        if (partidas[0] == null) {
+
+                            System.out.println("No hay ninguna partida guardada");
+
+                        }
+                        else{
+
+                            for (int i = 0; i < partidas.length; i++) {
+
+                                    System.out.println( partidas[i].getName() + " ");
+
+                            }
+
+                        }
                     
                     break;
                 
-                    
-                    
-                    
+                   
                 //En caso de EMPEZAR PARTIDA NUEVA :
                 
                 case "A":
                     
-                    p1 = new Personaje(1, "nueva Partida");
+                    System.out.println("¿Que nombre desea ponerle al personaje ?");
+                    String nombre = sc.nextLine();
+                    p1 = new Personaje(1, nombre);
                     
                   
-                    FileOutputStream partida_Nueva = new FileOutputStream("str.save");
+                    FileOutputStream partida_Nueva = new FileOutputStream(p1.getNombre() + ".save");
                     ObjectOutputStream out = new ObjectOutputStream(partida_Nueva);
-                    out.writeObject(p1);
+                    out.writeObject(p1.getNombre() + ".save");
                     
                     juegoIniciado();
                    
@@ -84,13 +101,31 @@ public class Main_GuardarPartida {
                             break;
                         case 2:
                             
-                            System.out.println("¿Que desea realizar ? || ( 0 - Sobreescribir la partida / 1 - Crear una partida nueva");
-                            int partida = sc.nextInt();
+                            //Recupero la ruta donde estan todas las partidas : 
                             
-                            if (partida == 0) {
+                            partidas = new File("partidasGuardadas").listFiles();
+                         
+                            System.out.println("¿Que desea realizar ? || ( 0 - Sobrescribir la partida / 1 - Crear una partida nueva");
+                            int funcionARealizar = sc.nextInt();
+                            
+                            if (funcionARealizar == 0) {
+                                
+                                ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(nombre + ".save"));
+                                outputStream.writeObject(nombre + ".save");
+                                
+                                
                                 
                             }
-                            else if(partida == 1){
+                            else if(funcionARealizar == 1){
+                                
+                                System.out.println("¿Con que nombre quiere guardar la nueva partida?");
+                                String nombrePartida = sc.nextLine();
+                                
+                                
+                                ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(nombrePartida + ".save"));
+
+                                outputStream.writeObject(nombrePartida + ".save");
+                                
                                 
                                 
                             }
