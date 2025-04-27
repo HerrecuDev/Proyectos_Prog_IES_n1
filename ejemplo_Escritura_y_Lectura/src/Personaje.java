@@ -14,10 +14,10 @@ public class Personaje implements Serializable{
     
     private static final long serialVersionUID = 1L;
     
-    private final int nivel;
-    private final String nombre;
+    private int nivel;
+    private String nombre;
     
-    public Personaje(int nivel , String nombre){
+    public Personaje(String nombre){
         
         this.nivel = 1;
         this.nombre = nombre;
@@ -37,12 +37,14 @@ public class Personaje implements Serializable{
     public String getNombre() {
         return nombre;
     }
+    public void subirNivel(){
+    
+        this.nivel++;
+        
+    }
 
    
-    
-    
-    
-    
+   
     //Generamos el toString : 
 
     @Override

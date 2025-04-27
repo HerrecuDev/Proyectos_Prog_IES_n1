@@ -30,19 +30,19 @@ public class Main_GuardarPartida {
           
             System.out.println("Pulsa S para salir de la partida");
             
-            String solicitud = sc.nextLine().toUpperCase();
+            String marcado = sc.nextLine().toUpperCase();
             
             
             
-            switch (solicitud) {
+            switch (marcado) {
                 
                 //En caso de querer cargar la partida anterior :
                 
                 case "R":
                     
-                        File [] partidas = new File("src\\partidasGuardadas").listFiles();
+                        File [] partidas = new File("/partidas_Guardadas").listFiles();
 
-                        if (partidas[0] == null) {
+                        if (partidas.length == 0) {
 
                             System.out.println("No hay ninguna partida guardada");
 
@@ -66,12 +66,12 @@ public class Main_GuardarPartida {
                     
                     System.out.println("¿Que nombre desea ponerle al personaje ?");
                     String nombre = sc.nextLine();
-                    p1 = new Personaje(1, nombre);
+                    p1 = new Personaje(nombre);
                     
                   
-                    FileOutputStream partida_Nueva = new FileOutputStream(p1.getNombre() + ".save");
+                    FileOutputStream partida_Nueva = new FileOutputStream(nombre + ".save");
                     ObjectOutputStream out = new ObjectOutputStream(partida_Nueva);
-                    out.writeObject(p1.getNombre() + ".save");
+                    out.writeObject(nombre + ".save");
                     
                     juegoIniciado();
                    
@@ -83,9 +83,9 @@ public class Main_GuardarPartida {
                     System.out.println(" 2 - Guardar Partida" );
                     System.out.println(" -1 - Terminar");
                     
-                    int decision = sc.nextInt();
+                    int solicitudDelUsuario = sc.nextInt();
                     
-                            switch (decision) {
+                    switch(solicitudDelUsuario) {
                         case 1:
                             
                             int nivel = p1.getNivel();
@@ -103,7 +103,7 @@ public class Main_GuardarPartida {
                             
                             //Recupero la ruta donde estan todas las partidas : 
                             
-                            partidas = new File("partidasGuardadas").listFiles();
+                            partidas = new File("/partidas_Guardadas").listFiles();
                          
                             System.out.println("¿Que desea realizar ? || ( 0 - Sobrescribir la partida / 1 - Crear una partida nueva");
                             int funcionARealizar = sc.nextInt();
@@ -168,7 +168,7 @@ public class Main_GuardarPartida {
     public static void juegoIniciado() throws FileNotFoundException, IOException, ClassNotFoundException{
         
         
-                    FileInputStream guardar_Partida = new FileInputStream("C:\\Users\\alumnociclo\\Desktop\\Partidas");
+                    FileInputStream guardar_Partida = new FileInputStream("/partidas_Guardadas");
                     ObjectInputStream objetosstream = new ObjectInputStream(guardar_Partida);
                     Personaje objeto = (Personaje) objetosstream.readObject();
                     System.out.println(objeto);
