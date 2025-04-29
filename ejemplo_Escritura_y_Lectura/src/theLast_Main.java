@@ -29,8 +29,8 @@ public class theLast_Main {
             while (opcion != -1) {
                 
                 System.out.println("¿Que quieres hacer?");
-                System.out.println("1- Cargar Partida");
-                System.out.println("2 - Nueva Partida");
+                System.out.println(" 1- Cargar Partida");
+                System.out.println(" 2 - Nueva Partida");
                 System.out.println("-1 - FINALIZAMOS EL PROGRAMA");
                 
                 opcion = sc.nextInt();
@@ -39,13 +39,14 @@ public class theLast_Main {
                 
                 switch (opcion) {
                     case 1:
+                       
+                        if (cargarPartida() == true) {
+                              
+                             System.out.println("Cargando la partida");
+                             ContinuarPartida();
+                        }
                         
-                        cargarPartida();
-                        System.out.println("Cargando la partida");
-                        
-                        ContinuarPartida();
-                        
-                        
+                 
                         //Para que continue preguntando :
                         opcion = 0;
                         
@@ -74,9 +75,13 @@ public class theLast_Main {
                         System.out.println("Opcion no valida");
                 }
                 
-                System.out.println("Menu Principal :");
                 
+               
+                 System.out.println("----------------------------------------------------------------");
                 
+                 System.out.println("");
+                 
+                 System.out.println("Menu Principal :");
                 
             }
 
@@ -128,11 +133,13 @@ public class theLast_Main {
             
         }
         
-        public static void cargarPartida() throws FileNotFoundException, IOException, ClassNotFoundException{
+        public static boolean cargarPartida() throws FileNotFoundException, IOException, ClassNotFoundException{
             
+            
+            boolean seCargaLaPartida = false;
             //pasamos lo que hya dentro del fichero a un Array : 
             
-            File[] ficheros = new File("partidas_Guardadas").listFiles();
+            File[] ficheros = new File("ficheros/").listFiles();
             
             if (ficheros.length > 0) {
                 
@@ -144,7 +151,7 @@ public class theLast_Main {
                 System.out.println("EScribe el nombre de la partida que desea cargar :");
                 String partida = sc.nextLine();
                 
-                File nombre_Part = new File("partidas_Guardadas/" + partida);
+                File nombre_Part = new File("ficheros/" + partida + ".save");
                 
                 if (nombre_Part.exists()) {
                     
@@ -163,7 +170,7 @@ public class theLast_Main {
                         System.out.println("La partida ha sido cargada con exito");
                         System.out.println(p.toString());
                         
-                    }
+                        seCargaLaPartida = true;                    }
                     else{
                         System.out.println("Se cancela la carga");
                     }
@@ -178,12 +185,19 @@ public class theLast_Main {
                 }
                 
             }
+            else{
+                System.out.println("LA CARPETA ESTA VACIA NO TIENE NINGUNA PARTIDA GUARDADA");
+                
+                
+            }
+            
+            return seCargaLaPartida;
             
         }
         
         public static void guardarPartida() throws FileNotFoundException, IOException{
             
-            File [] ficheros = new File("partidas_Guardadas").listFiles();
+            File [] ficheros = new File("ficheros/").listFiles();
             
             if (ficheros.length > 0 ) {
                 
@@ -205,7 +219,7 @@ public class theLast_Main {
             System.out.println("Escribe el nombre de la partida a guardar , si existe ya se sobrescribira : ");
             String partida = sc.nextLine();
             
-            File nombre_Part = new File("partidas_Guardadas/" + partida);
+            File nombre_Part = new File("ficheros/" + partida + ".save");
             
             if (nombre_Part.exists()) {
                 
@@ -235,7 +249,7 @@ public class theLast_Main {
                 
                 System.out.println("Guardando la partida : ");
                 
-                FileOutputStream ficheroS = new FileOutputStream(partida);
+                FileOutputStream ficheroS = new FileOutputStream(nombre_Part);
                 ObjectOutputStream out = new ObjectOutputStream(ficheroS);
                 
                 out.writeObject(p);

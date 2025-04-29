@@ -34,6 +34,12 @@ public class Recetario {
     public void setRecetas(List<Receta> recetas) {
         this.recetas = recetas;
     }
+
+    public List<Receta> getRecetas() {
+        return recetas;
+    }
+    
+    
     
     /**
      * Añade una nueva receta al recetario.
