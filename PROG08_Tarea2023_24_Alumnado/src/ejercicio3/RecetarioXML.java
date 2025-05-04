@@ -1,5 +1,13 @@
 package ejercicio3;
 
+import static java.util.stream.DoubleStream.builder;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 
 
 /**
@@ -16,17 +24,35 @@ public class RecetarioXML {
     
     
     
-    // -----------------------------------------------------
-    // Ejercicio 3: Métodos que debe implementar el alumnado
-    // -----------------------------------------------------
-    
+   
     // 3.1. Método escribir()
     /**
      * Método que escribe, en un archivo de texto, un objeto Recetario serializable.
      * @param recetario Objeto Recetario serializable para almacenar en el archivo de texto.
      */    
-    public void escribir(Recetario recetario) {
+    public void escribir(Recetario recetario) throws ParserConfigurationException {
         // Incluir el código que debe realizar el método
+        
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder br = factory.newDocumentBuilder();
+        DOMImplementation implementacion = br.getDOMImplementation();
+        
+        Document documento = implementacion.createDocument(null, "recetario", null);
+        documento.setXmlVersion("1.0");
+        
+        for (int i = 0; i < recetario.numRecetas(); i++) {
+            
+            recetario.getRecetas().get(i);
+            
+           
+            
+            Element receta = documento.createElement("receta");
+            
+        }
+        
+        
+        
+        
     }
     
     // 3.2. Método leer()
