@@ -2,6 +2,7 @@ package ejercicio3;
 
 import java.time.LocalDate;
 import java.util.List;
+import javax.xml.transform.TransformerException;
 
 /**
  * Ejercicio 3: Lectura y escritura de objetos. XML.
@@ -15,7 +16,7 @@ public class Ejercicio3 {
      * Método principal.
      * @param args argumentos que recibe el método
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws TransformerException {
 
         //----------------------------------------------
         //          Declaración de variables 
@@ -64,8 +65,8 @@ public class Ejercicio3 {
 
             // Escribo en el archivo XML a partir de la clase RecetarioXML.
             System.out.println("Escribiendo en el archivo Recetario.xml...");
-            //bd = new RecetarioXML(ruta);
-            //bd.escribir(miRecetario);
+            bd = new RecetarioXML(ruta);
+            bd.escribir(miRecetario);
 
             receta3 = new Receta("Pudin de almendras y arroz", "Postre",  LocalDate.parse("2010-01-23"),
                     List.of("leche de almendras", "arroz blanco", "azúcar","vainilla","extracto de almendras","canela","almendras tostadas"),
