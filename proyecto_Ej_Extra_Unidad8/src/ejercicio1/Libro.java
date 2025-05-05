@@ -38,7 +38,7 @@ public final class Libro {
      * @param genero Género del libro
      * @param fechaCreacion Fecha de creacion del libro
      */
-    public Libro(String titulo, String autor, LocalDate fechaCreacion, List<String> capitulos, String genero)
+    public Libro(String titulo, String autor, LocalDate fechaCreacion,String genero, List<String> capitulos)
             throws NullPointerException {
         this.setTitulo(titulo);
         this.setAutor(autor);

@@ -89,6 +89,10 @@ public class Biblioteca {
         
         return libros.remove(borrado);
     }
+
+    public List<Libro> getLibros() {
+        return libros;
+    }
     
     /**
      * Permite vaciar la biblioteca de libros.
