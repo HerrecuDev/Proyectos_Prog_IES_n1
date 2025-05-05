@@ -23,7 +23,7 @@ public class Ejercicio3 {
         //----------------------------------------------
         // Constantes
         // Variables de entrada
-        String ruta = System.getProperty("user.dir") + "/recursos/Recetario.xml";
+        String ruta = System.getProperty("user.dir") + "recursos/Recetario.xml";
         Recetario miRecetario;
         Receta receta1, receta2, receta3;
         RecetarioXML bd;

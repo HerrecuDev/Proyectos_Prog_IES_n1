@@ -83,7 +83,7 @@ public class RecetarioXML {
 
         //3º Creamos el StreamResult, que permitirá volcar el documento XML transformado
         //al archivo de destino.
-        StreamResult result = new StreamResult(new File("/recursos/receta.xml"));
+        StreamResult result = new StreamResult(new File("recursos/receta.xml"));
 
         //4º Realizamos la transformación indicando fuente y destino        
         t.transform(source, result);
@@ -93,9 +93,9 @@ public class RecetarioXML {
         } catch (ParserConfigurationException  | TransformerConfigurationException ex) {
             System.out.println("Error" + ex);
         }
-        catch(TransformerException ex){
+        catch(TransformerException e){
             
-            System.out.println("Error" + ex);
+            System.out.println("Error" + e);
             
         }
         
