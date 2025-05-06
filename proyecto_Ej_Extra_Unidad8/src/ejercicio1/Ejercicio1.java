@@ -69,6 +69,7 @@ public class Ejercicio1 {
             Libro libro = new Libro(titulo, autor, localDate, genero, lista_Capitulos);
             
             biblioteca.add(libro);
+            
         }
 
         //Cierro el BufferREader
