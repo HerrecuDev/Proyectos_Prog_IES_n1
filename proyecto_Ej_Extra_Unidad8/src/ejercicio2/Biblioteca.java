@@ -28,6 +28,12 @@ public class Biblioteca {
         libros = new ArrayList<>();
     }
 
+    public List<Libro> getLibros() {
+        return libros;
+    }
+    
+    
+
     /**
      * Asigna a la biblioteca un listado de libros que se pasa por parametro.
      * @param libros Lista de objetos de tipo Libro.

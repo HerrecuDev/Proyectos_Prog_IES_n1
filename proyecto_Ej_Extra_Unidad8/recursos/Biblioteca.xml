@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<biblioteca>
+    <Libro>El enigma de la montaña</Libro>
+    <autor>Carlos Gonzalez</autor>
+    <Genero>Aventura</Genero>
+    <Libro0/>
+    <Libro>Caminos de la mente</Libro>
+    <autor>Elena Rodri­guez</autor>
+    <Genero>Filosofi­a</Genero>
+    <Libro1/>
+</biblioteca>
