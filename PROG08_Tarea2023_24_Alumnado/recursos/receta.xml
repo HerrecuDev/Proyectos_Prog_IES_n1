@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<recetario/>
+<recetario>
+    <receta>Ensalada de Pimiento Dulce</receta>
+    <receta>Calabacita fantástica</receta>
+</recetario>

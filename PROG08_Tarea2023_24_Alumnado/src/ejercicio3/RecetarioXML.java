@@ -43,12 +43,12 @@ public class RecetarioXML {
      * Método que escribe, en un archivo de texto, un objeto Recetario serializable.
      * @param recetario Objeto Recetario serializable para almacenar en el archivo de texto.
      */    
-    public void escribir(Recetario recetario) throws TransformerException  {
+    public void escribir(Recetario recetario) {
         // Incluir el código que debe realizar el método
         
         try {
             
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder br = factory.newDocumentBuilder();
         DOMImplementation implementacion = br.getDOMImplementation();
         
