@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controladores.VistaController">
+   <children>
+      <TextField fx:id="campo1" layoutX="261.0" layoutY="38.0" prefHeight="25.0" prefWidth="149.0" text="CALCULADORA">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TextOperador1" layoutX="261.0" layoutY="114.0" />
+      <RadioButton fx:id="botonSumar" layoutX="160.0" layoutY="201.0" mnemonicParsing="false" text="SUMAR" />
+      <RadioButton fx:id="BotonRestar" layoutX="315.0" layoutY="201.0" mnemonicParsing="false" text="RESTAR" />
+      <RadioButton fx:id="BotonMultiplicar" layoutX="160.0" layoutY="256.0" mnemonicParsing="false" text="MULTIPLICAR" />
+      <RadioButton fx:id="BotonDividir" layoutX="315.0" layoutY="256.0" mnemonicParsing="false" text="DIVIDIR" />
+      <TextField fx:id="TextOperador2" layoutX="261.0" layoutY="147.0" />
+      <TextField fx:id="campo2" layoutX="164.0" layoutY="114.0" prefHeight="25.0" prefWidth="79.0" text="Operador 1 :" />
+      <TextField fx:id="campo3" layoutX="164.0" layoutY="147.0" prefHeight="25.0" prefWidth="79.0" text="Operador 2 :" />
+      <TextField fx:id="textoResultado" layoutX="300.0" layoutY="320.0" />
+      <TextField fx:id="resultado" layoutX="129.0" layoutY="320.0" text="RESULTADO :" />
+   </children>
+</AnchorPane>

@@ -86,6 +86,8 @@ public class Ejercicio3 {
                 
                 documento.appendChild(nacimiento);
                 
+              
+                
             }
         
         

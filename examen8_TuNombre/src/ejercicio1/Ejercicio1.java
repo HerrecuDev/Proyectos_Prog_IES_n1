@@ -105,7 +105,7 @@ public class Ejercicio1 {
        
        
         //Por ultimo volcamos los contactos de la agenda en un archivo :
-        PrintWriter bw = new PrintWriter("/recursos/BDCAgendaContactos.txt");
+        PrintWriter bw = new PrintWriter("recursos/BDCAgendaContactos.txt");
         
         for (int i = 0; i < agenda.numContactos(); i++) {
             
@@ -115,7 +115,7 @@ public class Ejercicio1 {
             
             //eMPEZAMOS A RELLENAR LA TABLA :
             
-            bw.println("["+ i + "]" + agenda.getPersonas().get(i).getNombre() + "    " + agenda.getPersonas().get(i).getDireccion()  );
+            bw.print("["+ i + "]" + agenda.getPersonas().get(i).getNombre() + "    " + agenda.getPersonas().get(i).getDireccion()  );
             
             
             
