@@ -1,46 +1,51 @@
+
+import java.io.Serializable;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ej_aprender_guardarpartida;
 
 /**
  *
  * @author alumnociclo
  */
-public class Personaje {
+public class Personaje implements Serializable{
     
+    private static final long serialVersionUID = 1L;
     
     private int nivel;
     private String nombre;
     
-    public Personaje(int nivel , String nombre){
-        this.nivel = nivel;
+    public Personaje(String nombre){
+        
+        this.nivel = 1;
         this.nombre = nombre;
+        
+        
+        
     }
-    
-    //Getter and Setters :
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public int getNivel() {
         return nivel;
     }
 
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void subirNivel(){
+    
+        this.nivel++;
+        
     }
-    
-    
-    
-    
-    //Genero el metodo toString :
+
+   
+   
+    //Generamos el toString : 
 
     @Override
     public String toString() {
@@ -51,8 +56,6 @@ public class Personaje {
         sb.append('}');
         return sb.toString();
     }
-    
-    
     
     
     
