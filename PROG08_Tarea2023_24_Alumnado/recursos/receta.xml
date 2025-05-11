@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <recetario>
-    <receta>Ensalada de Pimiento Dulce</receta>
-    <receta>Calabacita fantástica</receta>
+    <nombre>Ensalada de Pimiento Dulce</nombre>
+    <tipo>Ensalada</tipo>
+    <ingredientes>Se lavan 4 pimientos dulces, se les quita la parte superior y las semillas y se cortan en tiras.Se pela la cebolla y se corta en tiras delgadas.En un tazón grande, se mezcla el vinagre, el aceite, la sal y la pimienta.Se añade el pimiento dulce y la cebolla y se revuelve hasta que quede todo cubierto.Se cubre el tazón y se refrigera durante 30 minutos antes de servir.</ingredientes>
+    <nombre>Calabacita fantástica</nombre>
+    <tipo>Acompañamiento</tipo>
+    <ingredientes>Se precalienta el horno a 375 grados.Se cortan 2 calabacines en rodajas y se extienden en un molde para pastel.Sobre las calabitas se rocían dos cucharadas de ajo en polvo,la sal y el queso.Se hornea sin cubrir 40 minutos.</ingredientes>
 </recetario>

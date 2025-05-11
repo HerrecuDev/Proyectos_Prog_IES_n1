@@ -60,18 +60,45 @@ public class RecetarioXML {
             Receta recetaACtual = recetario.getRecetas().get(i);
             
             
-            
+            //Genero las etiquetas principales :
+          
             Element receta = documento.createElement("receta");
-            Text textreceta = documento.createTextNode(recetaACtual.getNombre());
-            receta.appendChild(textreceta);
-            
-            documento.getDocumentElement().appendChild(receta);
             
             
+            //Genero las etiquetas secundarias :
+            Element nombre = documento.createElement("nombre");
+            Text textnombre = documento.createTextNode(recetaACtual.getNombre());
+            nombre.appendChild(textnombre);
+            documento.getDocumentElement().appendChild(nombre);
+            
+            Element tipo = documento.createElement("tipo");
+            Text texttipo = documento.createTextNode(recetaACtual.getTipoPlato());
+            tipo.appendChild(texttipo);
+            documento.getDocumentElement().appendChild(tipo);
+            
+            
+            Element fecha = documento.createElement("fecha");
+            
+            
+            
+            
+            Element ingrediente = documento.createElement("ingredientes");
+            Text textingrediente = documento.createTextNode(recetaACtual.getInstrucciones());
+            ingrediente.appendChild(textingrediente);
+            documento.getDocumentElement().appendChild(ingrediente);
+            
+            
+            //Element Cirrereceta = documento.createElement("receta");
+            
+            
+           
+           
+            
+           
             
         }
         
-        System.out.println(recetario.numRecetas());
+       
         
          //TRANSFORMAR ÁRBOL DOM EN ARCHIVO XML
         //1º Especificamos la fuente de árbol DOM pasandole nuestro "documento"
@@ -88,7 +115,7 @@ public class RecetarioXML {
         //4º Realizamos la transformación indicando fuente y destino        
         t.transform(source, result);
         
-        
+         System.out.println(recetario.numRecetas());
             
         } catch (ParserConfigurationException  | TransformerConfigurationException ex) {
             System.out.println("Error" + ex);
