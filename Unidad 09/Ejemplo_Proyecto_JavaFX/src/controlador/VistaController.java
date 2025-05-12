@@ -5,6 +5,7 @@
 package controlador;
 
 import java.net.URL;
+import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +21,8 @@ public class VistaController implements Initializable {
 
     @FXML
     private Button btnEjemplo;
+    
+    //private Observable;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -29,5 +32,9 @@ public class VistaController implements Initializable {
     private void realizarAccion(ActionEvent event){
         System.out.println("Hola estoy siendo ejecutado desde el controlador");
     }
+    
+    
+    
+    
     
 }
