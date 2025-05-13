@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controlador.VistaModalController">
+   <children>
+      <Label fx:id="apellidos" layoutX="166.0" layoutY="174.0" text="Apellidos" />
+      <Label fx:id="nombre" layoutX="166.0" layoutY="125.0" text="Nombre" />
+      <Label fx:id="Edad" layoutX="177.0" layoutY="226.0" text="Edad" />
+      <TextField fx:id="textNombre" layoutX="268.0" layoutY="121.0" />
+      <TextField fx:id="textApellidos" layoutX="268.0" layoutY="170.0" />
+      <TextField fx:id="textEdad" layoutX="268.0" layoutY="222.0" />
+      <Label layoutX="168.0" layoutY="29.0" prefHeight="50.0" prefWidth="264.0" text="VISTA MODAL">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Button layoutX="314.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="agregar" />
+   </children>
+</AnchorPane>

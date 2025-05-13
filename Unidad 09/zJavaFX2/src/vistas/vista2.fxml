@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Vista2Controller">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Vista2Controller">
+   <children>
+      <MediaView fx:id="video" fitHeight="200.0" fitWidth="200.0" layoutX="386.0" layoutY="186.0" />
+      <Label layoutX="157.0" layoutY="25.0" prefHeight="50.0" prefWidth="255.0" text="SEGUNDA VISTA">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="barraProgreso" layoutX="322.0" layoutY="121.0" prefWidth="200.0" progress="0.0" />
+      <PieChart fx:id="grafica" layoutX="14.0" layoutY="121.0" prefHeight="239.0" prefWidth="285.0" />
+   </children>
 </AnchorPane>

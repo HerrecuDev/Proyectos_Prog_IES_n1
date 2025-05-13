@@ -6,6 +6,7 @@ package controlador;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -25,6 +26,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import modelo.Persona;
 
 /**
@@ -34,6 +40,8 @@ import modelo.Persona;
  */
 public class VistaController implements Initializable {
 
+    
+    //Variables mapeadas con SceneBuilder
     @FXML
     private TextField campoNombre;
     @FXML
@@ -47,22 +55,24 @@ public class VistaController implements Initializable {
     private TableColumn colApellidos;
     @FXML
     private TableColumn colEdad;
-    @FXML
-    private Button agregarPersona;
 
     //Array Observable
     private ObservableList<Persona> personas;
     @FXML
     private Button generarTXT;
     @FXML
-    private TableView<?> tablaPersonas;
+    private TableView<Persona> tablaPersonas;
+    
+    
+    private MediaPlayer reproductorMusica = null;
     @FXML
-    private MenuButton Archivo;
-    @FXML
-    private MenuButton Opciones;
+    private Button agregarPersona;
+    
+    //Variables creadas por mi
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         this.personas = FXCollections.observableArrayList();
         
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
@@ -71,7 +81,16 @@ public class VistaController implements Initializable {
         
         
         cargarDatosDeFichero();
+        
+        
+        
+        //Cargar imagenes en los botones : 
+        
+        //ImageView cuadrobtnModificar = (imageView) btnModificar.getGraphic();
+        //cuadroBtnModificar.setImage(new Image("assets/editar.png"));
     }
+    
+   
     
     private void cargarDatosDeFichero(){
         
@@ -217,21 +236,21 @@ public class VistaController implements Initializable {
         
     }
 
+
+   
+
     @FXML
     private void desmarcar(ActionEvent event) {
-        
-         tabla.getSelectionModel().clearSelection();
-         
-    }
-    
-    private void limpiarcampos(){
-        
-        
+        tabla.getSelectionModel().clearSelection();
     }
 
     @FXML
-    private void cambiarVentanaa(ActionEvent event) {
-          Main.ventana2();
+    private void cambiarventana(ActionEvent event) {
+        Main.ventana2();
     }
+
+    
+
+   
     
 }
