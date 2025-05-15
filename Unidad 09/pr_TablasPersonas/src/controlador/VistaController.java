@@ -18,7 +18,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
@@ -26,11 +28,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import modelo.Persona;
 
 /**
@@ -42,11 +49,8 @@ public class VistaController implements Initializable {
 
     
     //Variables mapeadas con SceneBuilder
-    @FXML
     private TextField campoNombre;
-    @FXML
     private TextField campoApellidos;
-    @FXML
     private TextField campoEdad;
     private TableView<Persona> tabla;
     @FXML
@@ -56,19 +60,27 @@ public class VistaController implements Initializable {
     @FXML
     private TableColumn colEdad;
 
-    //Array Observable
-    private ObservableList<Persona> personas;
-    @FXML
-    private Button generarTXT;
+   
     @FXML
     private TableView<Persona> tablaPersonas;
     
     
     private MediaPlayer reproductorMusica = null;
-    @FXML
-    private Button agregarPersona;
     
-    //Variables creadas por mi
+    //Variables creadas por mi :
+     //Array Observable
+    private ObservableList<Persona> personas;
+    @FXML
+    private ImageView ficheroTxt;
+    @FXML
+    private Button crearPersona;
+    @FXML
+    private Button eliminar;
+    @FXML
+    private Button editar;
+   
+   
+   
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -86,8 +98,14 @@ public class VistaController implements Initializable {
         
         //Cargar imagenes en los botones : 
         
-        //ImageView cuadrobtnModificar = (imageView) btnModificar.getGraphic();
-        //cuadroBtnModificar.setImage(new Image("assets/editar.png"));
+        ImageView cuadrobtnAgregar = (ImageView) crearPersona.getGraphic();
+        cuadrobtnAgregar.setImage(new Image("assets/agregar.png"));
+        
+        ImageView cuadrobtneliminar = (ImageView) eliminar.getGraphic();
+        cuadrobtneliminar.setImage(new Image("assets/eliminar.png"));
+        
+        ImageView cuadrobtnModificar = (ImageView) editar.getGraphic();
+        cuadrobtnModificar.setImage(new Image("assets/editar.png"));
     }
     
    
@@ -107,7 +125,7 @@ public class VistaController implements Initializable {
                 personas.add(pers);
             }
              
-            tabla.setItems(personas); //Vincular/Refrescar la tabla con la lista de objetos
+            tablaPersonas.setItems(personas); //Vincular/Refrescar la tabla con la lista de objetos
             
         } catch (FileNotFoundException ex) {
             System.out.println("No se encuentra el fichero");
@@ -120,7 +138,7 @@ public class VistaController implements Initializable {
         
     }
 
-    @FXML
+    
     private void agregarPersonaAction(ActionEvent event) {
         String nombre = this.campoNombre.getText();
         String apellidos = this.campoApellidos.getText();
@@ -130,7 +148,7 @@ public class VistaController implements Initializable {
 
         if (!personas.contains(p)) {
             this.personas.add(p);
-            tabla.setItems(personas);
+            tablaPersonas.setItems(personas);
         }else{
             Alert alerta = new Alert(Alert.AlertType.WARNING);
             alerta.setContentText("El individuo ya esta en la lista de personas");
@@ -158,6 +176,8 @@ public class VistaController implements Initializable {
        Main.cerrarApp();
     }
     
+    
+    /*
     private void seleccionar(ActionEvent event){
         Persona p = tabla.getSelectionModel().getSelectedItem();
                 
@@ -170,10 +190,10 @@ public class VistaController implements Initializable {
         }
     }
     
-    
+    */ //cON EL CAMBIO DE VIEW DEL PRIMER ACTO SE BORRA
     private void modificar(ActionEvent event){
-        
-        Persona p = tabla.getSelectionModel().getSelectedItem();
+        /*
+        Persona p = tablaPersonas.getSelectionModel().getSelectedItem();
         
         
         if (p == null) {
@@ -213,6 +233,8 @@ public class VistaController implements Initializable {
             
             
         }
+
+*/
     }
     
     
@@ -248,6 +270,26 @@ public class VistaController implements Initializable {
     private void cambiarventana(ActionEvent event) {
         Main.ventana2();
     }
+
+    @FXML
+    private void desplegarModal(ActionEvent event) throws IOException {
+        //Cargamos otra vista superpuesta o vista modal :
+        
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("/vistas/vistaModal.fxml"));
+        Pane rootModal = (AnchorPane) loader.load();
+        
+        
+        Scene sceneModal = new Scene(rootModal);
+        Stage escenarioModal = new Stage();
+        
+        
+        escenarioModal.initModality(Modality.APPLICATION_MODAL);
+        escenarioModal.setScene(sceneModal);
+        escenarioModal.showAndWait();
+    }
+
+   
 
     
 

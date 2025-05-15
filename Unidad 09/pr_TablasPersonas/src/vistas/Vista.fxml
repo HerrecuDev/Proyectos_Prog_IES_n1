@@ -6,35 +6,20 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VistaController">
    <children>
-      <TextField fx:id="campoNombre" layoutX="102.0" layoutY="65.0" />
-      <Text layoutX="33.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-      <TextField fx:id="campoApellidos" layoutX="102.0" layoutY="103.0" />
-      <TextField fx:id="campoEdad" layoutX="102.0" layoutY="146.0" />
-      <Text layoutX="30.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos" />
-      <Text layoutX="41.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edad" />
-      <TableView fx:id="tablaPersonas" layoutX="267.0" layoutY="86.0" prefHeight="200.0" prefWidth="327.0">
+      <TableView fx:id="tablaPersonas" layoutX="99.0" layoutY="112.0" prefHeight="176.0" prefWidth="342.0">
         <columns>
           <TableColumn fx:id="colNombre" prefWidth="87.0" text="Nombre" />
           <TableColumn fx:id="colApellidos" prefWidth="164.0" text="Apellidos" />
             <TableColumn fx:id="colEdad" prefWidth="74.0" text="Edad" />
         </columns>
       </TableView>
-      <Button fx:id="agregarPersona" layoutX="117.0" layoutY="188.0" mnemonicParsing="false" onAction="#agregarPersonaAction" text="Agregar persona" />
-      <Button fx:id="generarTXT" layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#generarTXTAction" text="Generar fichero TXT" />
-      <ImageView fitHeight="63.0" fitWidth="49.0" layoutX="183.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/81503.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="562.0" layoutY="53.0" mnemonicParsing="false" onAction="#desmarcar" prefHeight="16.0" prefWidth="13.0" text="X" />
+      <Button layoutX="414.0" layoutY="78.0" mnemonicParsing="false" onAction="#desmarcar" prefHeight="16.0" prefWidth="13.0" text="X" />
       <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
@@ -54,5 +39,27 @@
           </Menu>
         </menus>
       </MenuBar>
+      <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="99.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="crearPersona" layoutX="99.0" layoutY="314.0" mnemonicParsing="false" onAction="#desplegarModal" prefHeight="50.0" prefWidth="60.0">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="129.0" layoutY="-303.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="eliminar" layoutX="193.0" layoutY="314.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button layoutX="381.0" layoutY="314.0" mnemonicParsing="false" onAction="#generarTXTAction" prefHeight="50.0" prefWidth="60.0">
+         <graphic>
+            <ImageView fitHeight="49.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/81503.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="editar" layoutX="290.0" layoutY="313.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="76.0" />
+      <ImageView fitHeight="58.0" fitWidth="76.0" layoutX="287.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
