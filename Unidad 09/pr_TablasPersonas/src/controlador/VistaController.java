@@ -104,8 +104,11 @@ public class VistaController implements Initializable {
         ImageView cuadrobtneliminar = (ImageView) eliminar.getGraphic();
         cuadrobtneliminar.setImage(new Image("assets/eliminar.png"));
         
+        /*
         ImageView cuadrobtnModificar = (ImageView) editar.getGraphic();
         cuadrobtnModificar.setImage(new Image("assets/editar.png"));
+        
+        */
     }
     
    

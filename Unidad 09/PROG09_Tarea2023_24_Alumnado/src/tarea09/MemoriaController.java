@@ -46,6 +46,40 @@ public class MemoriaController implements Initializable {
     
     // linea de tiempo para gestionar el contador de tiempo del juego
     private Timeline contadorTiempo;
+    @FXML
+    private Button imagen1;
+    @FXML
+    private Button imagen2;
+    @FXML
+    private Button imagen3;
+    @FXML
+    private Button imagen4;
+    @FXML
+    private Button imagen6;
+    @FXML
+    private Button imagen5;
+    @FXML
+    private Button imagen7;
+    @FXML
+    private Button imagen8;
+    @FXML
+    private Button imagen9;
+    @FXML
+    private Button imagen10;
+    @FXML
+    private Button imagen11;
+    @FXML
+    private Button imagen12;
+    @FXML
+    private Button imagen13;
+    @FXML
+    private Button imagen14;
+    @FXML
+    private Button imagen15;
+    @FXML
+    private Button imagen16;
+    @FXML
+    private ImageView memoryGame;
 
     
     
@@ -66,6 +100,7 @@ public class MemoriaController implements Initializable {
 
         
         // inicialización de todos los aspectos necesarios
+        
         
         
         // contador de tiempo de la partida (Duration indica cada cuanto tiempo se actualizará)
@@ -89,7 +124,7 @@ public class MemoriaController implements Initializable {
      * Incluye la notación @FXML porque será accesible desde la interfaz de usuario
      * @param event Evento que ha provocado la llamada a este método
      */
-    @FXML  private void reiniciarJuego(ActionEvent event) {
+    private void reiniciarJuego(ActionEvent event) {
         
         // detener el contador de tiempo 
         
@@ -110,7 +145,7 @@ public class MemoriaController implements Initializable {
      * Incluye la notación @FXML porque será accesible desde la interfaz de usuario
      * @param event Evento que ha provocado la llamada a este método (carta que se ha pulsado)
      */
-    @FXML  private void mostrarContenidoCasilla(ActionEvent event) {
+    private void mostrarContenidoCasilla(ActionEvent event) {
 
         String cartaId = ((Button) event.getSource()).getId(); // obtener el ID de la carta pulsada
 
@@ -151,7 +186,7 @@ public class MemoriaController implements Initializable {
      * Al confirmar la acción la aplicación se cerrará (opcionalmente, se puede incluir algún efecto de despedida)
      * Incluye la notación @FXML porque será accesible desde la interfaz de usuario
      */      
-    @FXML   private void salir() {       
+    private void salir() {       
         
         // Alerta de confirmación que permita elegir si se desea salir o no del juego
         
