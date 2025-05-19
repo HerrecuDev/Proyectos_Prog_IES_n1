@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea09.MemoriaController">
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="769.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea09.MemoriaController">
    <children>
-      <Button fx:id="imagen1" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton0" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
@@ -28,80 +28,100 @@
          <image>
             <Image url="@assets/interfaz/memoryImage.png.jpg" />
          </image></ImageView>
-      <Button fx:id="imagen2" layoutX="119.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton1" layoutX="119.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen3" layoutX="219.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton2" layoutX="219.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen4" layoutX="321.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton3" layoutX="321.0" layoutY="7.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen6" layoutX="119.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton5" layoutX="119.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen5" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton4" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen7" layoutX="219.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton6" layoutX="219.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen8" layoutX="321.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton7" layoutX="321.0" layoutY="104.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen9" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton8" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen10" layoutX="119.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton9" layoutX="119.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen11" layoutX="219.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton10" layoutX="219.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen12" layoutX="321.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton11" layoutX="321.0" layoutY="198.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen13" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton12" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen14" layoutX="119.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton13" layoutX="119.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen15" layoutX="219.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton14" layoutX="219.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Button fx:id="imagen16" layoutX="321.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
+      <Button fx:id="boton15" layoutX="321.0" layoutY="295.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="78.0">
          <graphic>
             <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
+      </Button>
+      <Label fx:id="num_Intentos" layoutX="456.0" layoutY="243.0" prefHeight="42.0" prefWidth="60.0" text="0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="tiempo" layoutX="456.0" layoutY="325.0" prefHeight="42.0" prefWidth="60.0" text="0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button defaultButton="true" layoutX="528.0" layoutY="409.0" mnemonicParsing="false" onAction="#reiniciarJuego" prefHeight="42.0" prefWidth="176.0" text="Comenzar de Nuevo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="528.0" layoutY="473.0" mnemonicParsing="false" onAction="#salir" prefHeight="42.0" prefWidth="176.0" text="Salir del programa">
+         <font>
+            <Font size="14.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>

@@ -54,7 +54,7 @@ public class RecetarioXML {
         
         Document documento = implementacion.createDocument(null, "recetario", null);
         documento.setXmlVersion("1.0");
-        
+            System.out.println(recetario.numRecetas());
         for (int i = 0; i < recetario.numRecetas(); i++) {
             
             Receta recetaACtual = recetario.getRecetas().get(i);
