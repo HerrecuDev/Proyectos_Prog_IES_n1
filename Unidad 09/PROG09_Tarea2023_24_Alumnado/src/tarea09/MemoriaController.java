@@ -35,6 +35,9 @@ public class MemoriaController implements Initializable {
     private JuegoMemoria juego;         // instancia que controlará el estado del juego (tablero, parejas descubiertas, etc)
     private ArrayList<Button> cartas;   // array para almacenar referencias a las cartas @FXML definidas en la interfaz 
     private int segundos = 0;             // tiempo de juego
+    
+    private int intentos = 0;             //Intentos
+    
     private boolean primerBotonPulsado = false, segundoBotonPulsado = false; // indica si se han pulsado ya los dos botones para mostrar la pareja
     private int idBoton1, idBoton2;     // identificadores de los botones pulsados
     private boolean esPareja;           // almacenará si un par de botones pulsados descubren una pareja o no
@@ -42,7 +45,7 @@ public class MemoriaController implements Initializable {
     @FXML private AnchorPane main;      // panel principal (incluye la notación @FXML porque hace referencia a un elemento de la interfaz)
 
     // linea de tiempo para gestionar la finalización del intento al pasar 1.5 segundos
-    private final Timeline finIntento = new Timeline(new KeyFrame(Duration.seconds(1.5), e -> finalizarIntento()));
+    private final Timeline finIntento = new Timeline(new KeyFrame(Duration.seconds(1.0), e -> finalizarIntento()));
     
     // linea de tiempo para gestionar el contador de tiempo del juego
     private Timeline contadorTiempo;
@@ -90,9 +93,15 @@ public class MemoriaController implements Initializable {
     @FXML
     private Button boton15;
     
+    @FXML
+    private Button comenzarNuevoJuego;
+    @FXML
+    private Button SalirDelPrograma;
     
     //VAriables no enlazadas por FXML :
     private MediaPlayer reproductorMusica;
+   
+    
    
    
 
@@ -163,13 +172,20 @@ public class MemoriaController implements Initializable {
     private void reiniciarJuego(ActionEvent event) {
         
         // detener el contador de tiempo 
-       
+        segundos = 0;
+        //Volvemos a poner el contador de intentos a 0 :
+        intentos = 0;
         
         // detener la reproducción de la música de fondo
-
+        reproductorMusica.pause();
         /* hacer visibles las 16 cartas de juego ya que es posible que no todas estén visibles 
            si se encontraron parejas en la partida anterior */
         
+        for (int i = 0; i < cartas.size(); i++) {
+            
+            cartas.get(i).setVisible(true);
+            
+        }
         
         // llamar al método initialize para terminar de configurar la nueva partida
         initialize(null,null);
@@ -181,11 +197,56 @@ public class MemoriaController implements Initializable {
      * Incluye la notación @FXML porque será accesible desde la interfaz de usuario
      * @param event Evento que ha provocado la llamada a este método (carta que se ha pulsado)
      */
+    @FXML
     private void mostrarContenidoCasilla(ActionEvent event) {
 
         String cartaId = ((Button) event.getSource()).getId(); // obtener el ID de la carta pulsada
 
+        //Para asignar el numero de cada boton(utilizamos el metodo subString).
+        //Pasamos de String a int :
+        int numeroBoton = Integer.parseInt(cartaId.substring(5)); //De esta forma nos devolvera lo que haya a la derecha de la posicion 5.
+       
+        
+        //de esta forma asignamos al numero que tiene asignado el boton que pulsamos una imagen
+        ImageView asignarImagen = (ImageView) cartas.get(numeroBoton).getGraphic();
+        
+        
+        //Sacamos del back la imagen correspondiente al numero que tiene asignado el boton que pulsamos.
+        //Dicha imagen ira cambiando cada vez que iniciamos una nueva partida :
+        String Fotoid = juego.getCartaPosicion(numeroBoton);
+        
+        
+        //Aqui asignamos la imagen al objeto imageView que hemos creado antes conforme al id que tiene asignado
+        asignarImagen.setImage(new Image("tarea09/assets/cartas/personas/" + (Fotoid)+ ".png"));
+        
+        
+        
+        
         // gestionar correctamente la pulsación de las cartas (si es la primera o la segunda)
+        
+        
+        if (primerBotonPulsado == false) {
+            
+            idBoton1 = numeroBoton;
+            
+            primerBotonPulsado = true;
+            
+        }
+        else{
+            idBoton2 = numeroBoton;
+            
+            
+            //Llammaos al metodo ya fin intento que ya esta implementado para que realice un timeline de 1 segundo
+            //Para comprobar la segunda carta que pulsamos.
+            
+            finIntento.play();
+           
+            
+        }
+        
+        
+        
+        
         // descubrir la imagen asociada a cada una de las cartas (y ajustar su tamaño al tamaño del botón)
         // identificar si se ha encontrado una pareja o no
         // reproducir el efecto de sonido correspondiente
@@ -207,8 +268,38 @@ public class MemoriaController implements Initializable {
     private void finalizarIntento() {
         
         // hacer desaparecer del tablero las cartas seleccionadas si forman una pareja
+        
+         if (juego.compruebaJugada(idBoton1, idBoton2) == true) {
+                
+                cartas.get(idBoton1).setVisible(false);
+                cartas.get(idBoton2).setVisible(false);
+                
+         }
+         
+       
+         
         // ocultar las imágenes de las cartas seleccionadas si NO forman una pareja
+        
+          else{
+             ImageView asignarReversoIdBoton1 = (ImageView) cartas.get(idBoton1).getGraphic();
+             ImageView asignarReversoIdBoton2 = (ImageView) cartas.get(idBoton2).getGraphic();
+             
+             asignarReversoIdBoton1.setImage(new Image("/tarea09/assets/interfaz/reversoCarta.png"));
+             asignarReversoIdBoton2.setImage(new Image("/tarea09/assets/interfaz/reversoCarta.png"));
+             
+             //Actualizamos el valor del numero intentos :
+             intentos++;
+             num_Intentos.setText(intentos + "");
+          }
+        
+         
+         //Una vez comprobamos todo volvemos a resetear los botones :
+         
+         primerBotonPulsado = false;
+        
         // comprobar el final de partida 
+        
+        
         // si es final de partida mostra el mensaje de victoria y detener el temporizador y la música
 
 
