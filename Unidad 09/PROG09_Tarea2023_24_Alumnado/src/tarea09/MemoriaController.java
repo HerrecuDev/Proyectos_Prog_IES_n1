@@ -13,6 +13,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -22,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -100,6 +102,11 @@ public class MemoriaController implements Initializable {
     
     //VAriables no enlazadas por FXML :
     private MediaPlayer reproductorMusica;
+    private int numParejas = 0;
+    @FXML
+    private ImageView imagenFondo;
+    @FXML
+    private ImageView imagenFinJuego;
    
     
    
@@ -115,6 +122,21 @@ public class MemoriaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+         
+        // detener el contador de tiempo 
+        segundos = 0;
+        
+        //Restablecemos el numero de intentos :
+        intentos = 0;
+        num_Intentos.setText(intentos + "");
+        
+        //Asigno el Fondo del Tablero :
+        imagenFondo.setImage(new Image("/tarea09/assets/interfaz/fondoDB.jpg"));
+        
+        //Asigno la imagen para el fin del juego :
+        
+        imagenFinJuego.setImage(new Image("/tarea09/assets/interfaz/victoria.jpg"));
+        imagenFinJuego.setVisible(false);
 
         juego = new JuegoMemoria(); // instanciación del juego (esta instancia gestionará el estado de juego)
         juego.iniciarJuego();       // comienzo de una nueva partida
@@ -127,8 +149,9 @@ public class MemoriaController implements Initializable {
         
         for (int i = 0; i < cartas.size(); i++) {
             
-          ImageView reverso = (ImageView) cartas.get(i).getGraphic();
-          reverso.setImage(new Image("/tarea09/assets/interfaz/reversoCarta.png"));
+            ImageView reverso = (ImageView) cartas.get(i).getGraphic();
+          
+            reverso.setImage(new Image("/tarea09/assets/interfaz/reverso.jpg"));
             
         }
         
@@ -152,12 +175,12 @@ public class MemoriaController implements Initializable {
 
        
         // música de fondo para que se reproduzca cuando se inicia el juego
-        File f = new File("src/tarea09/assets/sonidos/musica.mp3");
+        File f = new File("src/tarea09/assets/sonidos/intro_Dragon_ball.mp3");
         reproductorMusica = new MediaPlayer(new Media(f.toURI().toString()));
         reproductorMusica.setCycleCount(MediaPlayer.INDEFINITE);
         
         reproductorMusica.play();
-
+        
         
         
     }
@@ -171,10 +194,7 @@ public class MemoriaController implements Initializable {
     @FXML
     private void reiniciarJuego(ActionEvent event) {
         
-        // detener el contador de tiempo 
-        segundos = 0;
-        //Volvemos a poner el contador de intentos a 0 :
-        intentos = 0;
+     
         
         // detener la reproducción de la música de fondo
         reproductorMusica.pause();
@@ -187,8 +207,14 @@ public class MemoriaController implements Initializable {
             
         }
         
+        
+        
+        
         // llamar al método initialize para terminar de configurar la nueva partida
         initialize(null,null);
+        
+      
+        
     }
 
     /**
@@ -217,7 +243,7 @@ public class MemoriaController implements Initializable {
         
         
         //Aqui asignamos la imagen al objeto imageView que hemos creado antes conforme al id que tiene asignado
-        asignarImagen.setImage(new Image("tarea09/assets/cartas/personas/" + (Fotoid)+ ".png"));
+        asignarImagen.setImage(new Image("tarea09/assets/cartas/Dragonball/" + (Fotoid)+ ".jpg"));
         
         
         
@@ -227,6 +253,10 @@ public class MemoriaController implements Initializable {
         
         if (primerBotonPulsado == false) {
             
+            //Realizo el sonido de pulsación :
+            pulsacionMusic();
+            
+            
             idBoton1 = numeroBoton;
             
             primerBotonPulsado = true;
@@ -235,6 +265,8 @@ public class MemoriaController implements Initializable {
         else{
             idBoton2 = numeroBoton;
             
+            //Realizo el sonido de pulsación :
+            pulsacionMusic();
             
             //Llammaos al metodo ya fin intento que ya esta implementado para que realice un timeline de 1 segundo
             //Para comprobar la segunda carta que pulsamos.
@@ -249,6 +281,13 @@ public class MemoriaController implements Initializable {
         
         // descubrir la imagen asociada a cada una de las cartas (y ajustar su tamaño al tamaño del botón)
         // identificar si se ha encontrado una pareja o no
+        
+        if (esPareja == true) {
+            
+            numParejas++;
+            
+        }
+        
         // reproducir el efecto de sonido correspondiente
         // finalizar intento (usar el timeline para que haga la llamada transcurrido el tiempo definido)
 
@@ -270,6 +309,11 @@ public class MemoriaController implements Initializable {
         // hacer desaparecer del tablero las cartas seleccionadas si forman una pareja
         
          if (juego.compruebaJugada(idBoton1, idBoton2) == true) {
+             
+                //Realizamos el sonido de Correcto :
+                sonidoEspareja();
+                
+                
                 
                 cartas.get(idBoton1).setVisible(false);
                 cartas.get(idBoton2).setVisible(false);
@@ -284,8 +328,11 @@ public class MemoriaController implements Initializable {
              ImageView asignarReversoIdBoton1 = (ImageView) cartas.get(idBoton1).getGraphic();
              ImageView asignarReversoIdBoton2 = (ImageView) cartas.get(idBoton2).getGraphic();
              
-             asignarReversoIdBoton1.setImage(new Image("/tarea09/assets/interfaz/reversoCarta.png"));
-             asignarReversoIdBoton2.setImage(new Image("/tarea09/assets/interfaz/reversoCarta.png"));
+             //Realizamos el sonido del error:
+             sonidoNoespareja();
+             
+             asignarReversoIdBoton1.setImage(new Image("/tarea09/assets/interfaz/reverso.jpg"));
+             asignarReversoIdBoton2.setImage(new Image("/tarea09/assets/interfaz/reverso.jpg"));
              
              //Actualizamos el valor del numero intentos :
              intentos++;
@@ -298,9 +345,14 @@ public class MemoriaController implements Initializable {
          primerBotonPulsado = false;
         
         // comprobar el final de partida 
+        if (juego.compruebaFin() == true) {
+            
+            // si es final de partida mostra el mensaje de victoria y detener el temporizador y la música
+            imagenFinJuego.setVisible(true);
+            
+        }
         
         
-        // si es final de partida mostra el mensaje de victoria y detener el temporizador y la música
 
 
     }
@@ -317,10 +369,59 @@ public class MemoriaController implements Initializable {
     private void salir() {       
         
         // Alerta de confirmación que permita elegir si se desea salir o no del juego
+        Alert mensajeFinal = new Alert(Alert.AlertType.CONFIRMATION);
+        mensajeFinal.setContentText("¿Quiere cerrar el programa?");
+        
+        ButtonType botonSi = new ButtonType("Si");
+        ButtonType botonNo = new ButtonType("No");
+        
+        mensajeFinal.getButtonTypes().setAll(botonSi , botonNo);
+        
+        Optional<ButtonType> salida = mensajeFinal.showAndWait();
+        
+        if (salida.get() == botonSi) {
+             // SOLO si se confirma la acción se cerrará la ventana y el juego finalizará. 
+                Platform.exit();
+        }
+        else if(salida.get() == botonNo){
+            // llamar al método initialize para terminar de configurar la nueva partida
+             Alert ayuda = new Alert(Alert.AlertType.INFORMATION);
+             ayuda.setContentText("Pulsa el boton de comenzar de nuevo si quiere seguir jugando");
+             
+             //Que espere la decision :
+             Optional<ButtonType> guia = ayuda.showAndWait();
+        }
         
         
 
-        // SOLO si se confirma la acción se cerrará la ventana y el juego finalizará. 
-        Platform.exit();
+      
+    }
+    
+    
+    public void pulsacionMusic() {
+        
+        File soundclick =  new File("src/tarea09/assets/sonidos/pulsacion.mp3");
+        Media click = new Media(soundclick.toURI().toString());
+        AudioClip mediaPlayer = new AudioClip(click.getSource());
+        mediaPlayer.play();
+        
+        
+    }
+    
+    public void sonidoEspareja(){
+        File soundclick =  new File("src/tarea09/assets/sonidos/correcto.mp3");
+        Media click = new Media(soundclick.toURI().toString());
+        AudioClip mediaPlayer = new AudioClip(click.getSource());
+        mediaPlayer.play();
+        
+    }
+    
+    public void sonidoNoespareja(){
+        
+        File soundclick =  new File("src/tarea09/assets/sonidos/incorrecto.mp3");
+        Media click = new Media(soundclick.toURI().toString());
+        AudioClip mediaPlayer = new AudioClip(click.getSource());
+        mediaPlayer.play();
+        
     }
 }

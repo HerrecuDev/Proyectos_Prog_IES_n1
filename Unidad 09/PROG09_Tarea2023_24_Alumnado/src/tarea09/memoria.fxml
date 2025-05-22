@@ -9,119 +9,122 @@
 
 <AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="769.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea09.MemoriaController">
    <children>
-      <Button fx:id="boton0" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
+      <ImageView fx:id="imagenFondo" fitHeight="573.0" fitWidth="769.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagenFinJuego" fitHeight="573.0" fitWidth="533.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="boton0" layoutX="3.0" layoutY="41.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
          <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
-      <Label layoutX="444.0" layoutY="213.0" prefHeight="30.0" prefWidth="84.0" text=" Intentos:">
+      <Label layoutX="648.0" layoutY="212.0" prefHeight="30.0" prefWidth="84.0" text=" Intentos:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="444.0" layoutY="295.0" prefHeight="30.0" prefWidth="84.0" text="Tiempo:">
+      <Label layoutX="648.0" layoutY="288.0" prefHeight="30.0" prefWidth="84.0" text="Tiempo:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="memoryGame" fitHeight="90.0" fitWidth="161.0" layoutX="425.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="boton1" layoutX="136.0" layoutY="41.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="94.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton2" layoutX="266.0" layoutY="41.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="91.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton3" layoutX="397.0" layoutY="41.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="94.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton5" layoutX="136.0" layoutY="171.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton4" layoutX="3.0" layoutY="171.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton6" layoutX="266.0" layoutY="172.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="109.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton7" layoutX="397.0" layoutY="172.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton8" layoutX="3.0" layoutY="297.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton9" layoutX="136.0" layoutY="297.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton10" layoutX="266.0" layoutY="297.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton11" layoutX="397.0" layoutY="297.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton12" layoutX="3.0" layoutY="427.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="93.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton13" layoutX="136.0" layoutY="427.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="96.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton14" layoutX="266.0" layoutY="427.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="110.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="95.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button fx:id="boton15" layoutX="397.0" layoutY="428.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="109.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="98.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Label fx:id="num_Intentos" layoutX="684.0" layoutY="242.0" prefHeight="42.0" prefWidth="40.0" text="0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="tiempo" layoutX="684.0" layoutY="318.0" prefHeight="42.0" prefWidth="58.0" text="0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="comenzarNuevoJuego" defaultButton="true" layoutX="550.0" layoutY="398.0" mnemonicParsing="false" onAction="#reiniciarJuego" prefHeight="42.0" prefWidth="176.0" text="Comenzar nuevo juego">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="SalirDelPrograma" layoutX="550.0" layoutY="472.0" mnemonicParsing="false" onAction="#salir" prefHeight="42.0" prefWidth="176.0" text="Salir del programa">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="memoryGame" fitHeight="163.0" fitWidth="211.0" layoutX="533.0" layoutY="33.0">
          <image>
-            <Image url="@assets/interfaz/memoryImage.png.jpg" />
-         </image></ImageView>
-      <Button fx:id="boton1" layoutX="119.0" layoutY="7.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton2" layoutX="219.0" layoutY="7.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton3" layoutX="321.0" layoutY="7.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton5" layoutX="119.0" layoutY="104.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton4" layoutX="14.0" layoutY="104.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton6" layoutX="219.0" layoutY="104.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton7" layoutX="321.0" layoutY="104.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton8" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton9" layoutX="119.0" layoutY="198.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton10" layoutX="219.0" layoutY="198.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton11" layoutX="321.0" layoutY="198.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton12" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton13" layoutX="119.0" layoutY="295.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton14" layoutX="219.0" layoutY="295.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button fx:id="boton15" layoutX="321.0" layoutY="295.0" mnemonicParsing="false" onAction="#mostrarContenidoCasilla" prefHeight="81.0" prefWidth="78.0">
-         <graphic>
-            <ImageView fitHeight="81.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Label fx:id="num_Intentos" layoutX="456.0" layoutY="243.0" prefHeight="42.0" prefWidth="60.0" text="0">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <Label fx:id="tiempo" layoutX="456.0" layoutY="325.0" prefHeight="42.0" prefWidth="60.0" text="0">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <Button fx:id="comenzarNuevoJuego" defaultButton="true" layoutX="528.0" layoutY="409.0" mnemonicParsing="false" onAction="#reiniciarJuego" prefHeight="42.0" prefWidth="176.0" text="Comenzar nuevo juego">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="SalirDelPrograma" layoutX="528.0" layoutY="473.0" mnemonicParsing="false" onAction="#salir" prefHeight="42.0" prefWidth="176.0" text="Salir del programa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
+            <Image url="@assets/interfaz/memory_DragonballZ.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
