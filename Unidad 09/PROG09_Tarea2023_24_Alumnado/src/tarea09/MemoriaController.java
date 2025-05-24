@@ -23,6 +23,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -131,7 +134,14 @@ public class MemoriaController implements Initializable {
         num_Intentos.setText(intentos + "");
         
         //Asigno el Fondo del Tablero :
-        imagenFondo.setImage(new Image("/tarea09/assets/interfaz/fondoDB.jpg"));
+        Image imagen = new Image(getClass().getResourceAsStream("/tarea09/assets/interfaz/fondoDB.jpg"));
+        imagenFondo.setImage(imagen);
+        
+        //De esta forma ajusto la imagen al tamaño completo del Imageview :
+
+        imagenFondo.setPreserveRatio(false); 
+        imagenFondo.setSmooth(true);
+        
         
         //Asigno la imagen para el fin del juego :
         
@@ -145,14 +155,21 @@ public class MemoriaController implements Initializable {
         // guarda en el ArrayList "cartas" todas las referencias @FXML a las cartas para gestionarlo cómodamente
         cartas.addAll(Arrays.asList(boton0 ,boton1, boton2, boton3,boton4, boton5, boton6, boton7, boton8, boton9 , boton10 , boton11, boton12 , boton13, boton14, boton15));
         
-        //Recorremos el ArrayList de cartas y le vamos asignando a cada boton su reverso :
+        //Recorremos el ArrayList de cartas y le vamos asignando a cada boton su reverso a la vez que lo vamos ajustando :
         
         for (int i = 0; i < cartas.size(); i++) {
             
             ImageView reverso = (ImageView) cartas.get(i).getGraphic();
-          
-            reverso.setImage(new Image("/tarea09/assets/interfaz/reverso.jpg"));
             
+            //Configuro tamaño de la imagen:
+            reverso.setFitWidth(115);
+            reverso.setFitHeight(110);
+            reverso.setPreserveRatio(false);
+            reverso.setSmooth(true);
+            
+            //Por ultimo asigno la imagen :
+            reverso.setImage(new Image(getClass().getResourceAsStream("/tarea09/assets/interfaz/reverso.jpg")));
+     
         }
         
         
@@ -241,14 +258,17 @@ public class MemoriaController implements Initializable {
         //Dicha imagen ira cambiando cada vez que iniciamos una nueva partida :
         String Fotoid = juego.getCartaPosicion(numeroBoton);
         
-        
+       
         //Aqui asignamos la imagen al objeto imageView que hemos creado antes conforme al id que tiene asignado
         asignarImagen.setImage(new Image("tarea09/assets/cartas/Dragonball/" + (Fotoid)+ ".jpg"));
+      
         
         
         
         
         // gestionar correctamente la pulsación de las cartas (si es la primera o la segunda)
+         // descubrir la imagen asociada a cada una de las cartas (y ajustar su tamaño al tamaño del botón)
+        // identificar si se ha encontrado una pareja o no
         
         
         if (primerBotonPulsado == false) {
@@ -265,6 +285,9 @@ public class MemoriaController implements Initializable {
         else{
             idBoton2 = numeroBoton;
             
+             // reproducir el efecto de sonido correspondiente
+            // finalizar intento (usar el timeline para que haga la llamada transcurrido el tiempo definido)
+            
             //Realizo el sonido de pulsación :
             pulsacionMusic();
             
@@ -277,19 +300,6 @@ public class MemoriaController implements Initializable {
         }
         
         
-        
-        
-        // descubrir la imagen asociada a cada una de las cartas (y ajustar su tamaño al tamaño del botón)
-        // identificar si se ha encontrado una pareja o no
-        
-        if (esPareja == true) {
-            
-            numParejas++;
-            
-        }
-        
-        // reproducir el efecto de sonido correspondiente
-        // finalizar intento (usar el timeline para que haga la llamada transcurrido el tiempo definido)
 
     }
 
@@ -348,6 +358,9 @@ public class MemoriaController implements Initializable {
         if (juego.compruebaFin() == true) {
             
             // si es final de partida mostra el mensaje de victoria y detener el temporizador y la música
+            reproductorMusica.pause();
+            contadorTiempo.pause();
+            
             imagenFinJuego.setVisible(true);
             
         }
@@ -424,4 +437,6 @@ public class MemoriaController implements Initializable {
         mediaPlayer.play();
         
     }
+    
+    
 }
