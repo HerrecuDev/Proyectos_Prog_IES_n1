@@ -133,6 +133,11 @@ public class MemoriaController implements Initializable {
         intentos = 0;
         num_Intentos.setText(intentos + "");
         
+        //Añador color a los botones de comenzar y finalizar partida:
+        comenzarNuevoJuego.setStyle("-fx-background-color: #ff8000;");
+        SalirDelPrograma.setStyle("-fx-background-color: #FFFFFF;");
+        
+        
         //Asigno el Fondo del Tablero :
         Image imagen = new Image(getClass().getResourceAsStream("/tarea09/assets/interfaz/fondoDB.jpg"));
         imagenFondo.setImage(imagen);

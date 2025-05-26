@@ -111,12 +111,12 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="comenzarNuevoJuego" defaultButton="true" layoutX="576.0" layoutY="394.0" mnemonicParsing="false" onAction="#reiniciarJuego" prefHeight="42.0" prefWidth="176.0" text="Comenzar nuevo juego">
+      <Button fx:id="comenzarNuevoJuego" defaultButton="true" layoutX="576.0" layoutY="394.0" mnemonicParsing="false" onAction="#reiniciarJuego" prefHeight="42.0" prefWidth="176.0" text="Comenzar nueva partida" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="SalirDelPrograma" layoutX="576.0" layoutY="465.0" mnemonicParsing="false" onAction="#salir" prefHeight="42.0" prefWidth="176.0" text="Salir del programa">
+      <Button fx:id="SalirDelPrograma" layoutX="576.0" layoutY="465.0" mnemonicParsing="false" onAction="#salir" prefHeight="42.0" prefWidth="176.0" text="Salir del programa" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font size="14.0" />
          </font>
